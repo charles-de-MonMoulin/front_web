@@ -1,9 +1,9 @@
 import axios from "axios";
 
 
-export const GetOrders = (idClient) => {
+export const GetOrders = (idClient = null, url = null) => {
     return axios.get(
-        'http://localhost:8000/orders/?client=' + idClient,
+        url!==null?url:'http://localhost:8000/orders/?client=' + idClient,
         {headers: {"Authorization": `Bearer ` + localStorage.getItem('token')}}
     ).then(response => {
         localStorage.setItem('orders', JSON.stringify(response.data))

@@ -74,13 +74,13 @@ class OrderForm extends React.Component {
                 })
                 this.updateLines()
                 this.props.history.push({
-                    pathname: '/order_lines',
+                    pathname: '/order_line',
                     data: {id: this.state.id, name: this.state.name}
                 })
             })
         } else {
             this.props.history.push({
-                pathname: '/order_lines',
+                pathname: '/order_line',
                 data: {id: this.state.id, name: this.state.name}
             })
         }

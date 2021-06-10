@@ -29,11 +29,31 @@ class OrderList extends React.Component {
     }
 
     handlePrevious = event => {
-
+        if (this.state.previous) {
+            GetOrders(null, this.state.previous).then(r => {
+                let res = JSON.parse(localStorage.getItem('orders'))
+                this.setState({
+                    next: res.next,
+                    count: res.count,
+                    previous: res.previous,
+                    orders: res.results
+                })
+            })
+        }
     }
 
     handleNext = event => {
-
+        if (this.state.next) {
+            GetOrders(null, this.state.next).then(r => {
+                let res = JSON.parse(localStorage.getItem('orders'))
+                this.setState({
+                    next: res.next,
+                    count: res.count,
+                    previous: res.previous,
+                    orders: res.results
+                })
+            })
+        }
     }
 
     handleRedirect = event => {

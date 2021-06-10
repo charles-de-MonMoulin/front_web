@@ -47,7 +47,7 @@ function App() {
                                     <Route path="/product" component={AddProduct}/>
                                     <Route path="/order" component={OrderForm}/>
                                     <Route path="/orders" component={OrderList}/>
-                                    <Route path="/order_lines" component={OrderLine}/>
+                                    <Route path="/order_line" component={OrderLine}/>
                                 </Switch>
                             </div>
                         </div>
